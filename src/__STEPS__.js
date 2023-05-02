@@ -1,4 +1,6 @@
 /**
+ * THIS STEPS FROM JHANKAR MAHABUB
+ * 
  * 1. create firebase project
  * 2. create web app
  * 3. npm i firebase

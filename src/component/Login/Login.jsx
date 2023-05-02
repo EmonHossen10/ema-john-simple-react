@@ -2,6 +2,7 @@ import React from 'react';
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
@@ -21,6 +22,9 @@ const Login = () => {
       <Button variant="primary" type="submit" className='btn-submit'>
         Login
       </Button>
+      <p className='text-center'>
+        <small>New to Ema-john?<Link to="/signup"> <button className='btn btn-link'> <small > Create New Account </small></button></Link></small>
+      </p>
     </Form>
     );
 };
