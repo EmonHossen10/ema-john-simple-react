@@ -1,0 +1,27 @@
+.form-container {
+  margin-top: 128px;
+  border: 1px solid #95a0a7;
+  padding: 30px;
+}
+.title {
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 42px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.btn-submit {
+  width: 318px;
+  height: 55px;
+  margin-top: 25px;
+  font-size: 21px;
+  color: #0e161a;
+  background: rgba(255, 153, 0, 0.3);
+  border-radius: 5px;
+  border: none;
+}
+.btn-submit:hover{
+    background: rgba(255, 153, 0, 0.6);
+    color: #0e161a;
+
+}
