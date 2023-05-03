@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -7,6 +7,8 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
 
+  const [show,setShow]=useState(false);
+
   const {signIn}=useContext(AuthContext);
   // navigate
   const navigate=useNavigate()
@@ -14,6 +16,7 @@ const Login = () => {
   const location =useLocation()
   console.log(location)
 
+  const from=location.state?.from?.pathname || "/"
 
 
   const handleLogin=event=>{
@@ -29,7 +32,7 @@ const Login = () => {
         console.log(loggedUser)
         form.reset();
         // navigate 
-        navigate('/')
+        navigate(from,{replace : true} )
       })
       .catch(error=>{
         console.log(error)
@@ -68,8 +71,15 @@ const Login = () => {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label className='ps-2'>Password</Form.Label>
-        <Form.Control type="password" name='password' placeholder="Password"required />
+        <Form.Control type={show ? "text" : "password"} name='password' placeholder="Password"required />
       </Form.Group>
+      <p onClick={()=>setShow(!show)}>
+        <small>
+          {
+            show ? <span> Hide Password</span> : <span>Show Password</span>
+          }
+        </small>
+        </p>
        
       <Button variant="primary" type="submit" className='btn-submit'>
         Login
